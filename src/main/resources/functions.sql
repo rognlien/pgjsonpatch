@@ -1,12 +1,13 @@
-DROP FUNCTION IF EXISTS bendik(a jsonb, b jsonb);
-
-CREATE FUNCTION bendik(a jsonb, b jsonb) RETURNS jsonb AS
+CREATE OR REPLACE FUNCTION json_patch(data jsonb, patches jsonb) RETURNS jsonb AS
 $$
-  return a
+  var jsonData = JSON.parse(data);
+  var jsonPatches = JSON.parse(patches);
+
+  jp.apply(jsonData, jsonPatches );
+
+  plv8.elog(LOG, "Patching: " + a + " => " + b);
+
+  return JSON.stringify(jsonData);
 $$
 LANGUAGE plv8 IMMUTABLE STRICT;
 
-
-CREATE AGGREGATE bendikagg(jsonb) (
-    SFUNC = bendik,
-    STYPE = jsonb);
