@@ -1,10 +1,17 @@
 
 INSERT INTO events (ad, data) VALUES
   (2, '[
-    {"op": "add", "path": "/title", "value": "This is the title"}
-    ,{"op": "add", "path": "/description", "value": "This is the description"}
-    , {"op": "replace", "path": "/title", "value": "The title has been replaced" }
+    {"op": "add", "path": "/title", "value": "The original title"}
+    ,{"op": "add", "path": "/description", "value": "This is the original description"}
     ]')
 
-  ,(2, '[{"op": "remove", "path": "/description"}]');
+  ,(2, '[
+    {"op": "add", "path": "/keywords", "value": ["Foo", "Bar", "Rex"]}
+    ,{"op": "add", "path": "/price", "value": 89.75}
+    ]')
+
+  ,(2, '[
+    {"op": "replace", "path": "/title", "value": "The updated title" }
+    ]')
+  ;
 

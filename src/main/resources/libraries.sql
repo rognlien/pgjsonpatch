@@ -12,7 +12,11 @@ create or replace function plv8_startup()
   language plv8
   as
 $$
+
+plv8.elog(NOTICE, "Running plv8_startup()");
+
 load_module = function(modname) {
+    plv8.elog(NOTICE, "Loading module: " + modname);
     var rows = plv8.execute("SELECT code from plv8_modules " +
                             " where modname = $1", [modname]);
 
@@ -22,4 +26,14 @@ load_module = function(modname) {
         eval("(function() { " + code + "})")();
     }
 };
+
+
+// now load all the modules marked for loading on start
+var rows = plv8.execute("SELECT modname, code from plv8_modules where load_on_start");
+for (var r = 0; r < rows.length; r++)
+{
+ var code = rows[r].code;
+ eval("(function() { " + code + "})")();
+}
+
 $$;

@@ -1,13 +1,7 @@
-CREATE OR REPLACE FUNCTION json_patch(data jsonb, patches jsonb) RETURNS jsonb AS
+CREATE OR REPLACE FUNCTION json_patch(data json, patches json) RETURNS json AS
 $$
-  var jsonData = JSON.parse(data);
-  var jsonPatches = JSON.parse(patches);
-
-  jp.apply(jsonData, jsonPatches );
-
-  plv8.elog(LOG, "Patching: " + a + " => " + b);
-
-  return JSON.stringify(jsonData);
+  jp.apply(data, patches);
+  return data;
 $$
 LANGUAGE plv8 IMMUTABLE STRICT;
 
