@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION json_patch(data json, patches json) RETURNS json AS
+CREATE OR REPLACE FUNCTION json_patch(data json, patches jsonb) RETURNS json AS
 $$
   jp.apply(data, patches);
   return data;

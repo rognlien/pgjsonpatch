@@ -72,7 +72,9 @@ function store(id, patch, callback) {
 
     pg.connect(connectionString, function (err, client, done) {
 
-        client.query('INSERT INTO events (ad, data) VALUES ($1, $2) RETURNING id', [id, JSON.stringify(patch)], function (err, result) {
+        client.query('INSERT INTO events (ad, data) VALUES ($1, $2) RETURNING id'
+            ,[id, JSON.stringify(patch)]
+            ,function (err, result) {
 
             console.log("INSERT result: %s", result.rows[0].id);
             // Handle Errors
@@ -93,7 +95,6 @@ function getAd(id, version, callback) {
     var result;
     pg.connect(connectionString, function (err, client, done) {
 
-        // SQL Query > Select Data query( "select name from emp where emp_id=$1", [123] )
         var query = client.query("SELECT max(ad) AS id, max(id) as version, max(created) AS modified, json_patch_agg(data) AS data FROM events WHERE id <= $2 AND ad = $1 GROUP BY ad;", [id, version]);
 
         query.on('row', function (row) {
