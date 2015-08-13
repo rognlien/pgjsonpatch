@@ -1,0 +1,115 @@
+{
+  "href": "http://benjohan.finn.no:8080/ads/model/boat-dock",
+  "title": "boat-dock",
+  "field-definitions": [
+    {
+      "name": "price",
+      "type": "COMPLEX",
+      "description": "Pris",
+      "mandatory": true,
+      "searchable": false,
+      "multi-value": false,
+      "children": [
+        {
+          "name": "price_amount",
+          "type": "NUMBER",
+          "description": "Pris",
+          "mandatory": true,
+          "searchable": false,
+          "multi-value": false
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "type": "COMPLEX",
+      "description": "Kontaktinformasjon",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false,
+      "children": [
+        {
+          "name": "contact_name",
+          "type": "STRING",
+          "description": "Kontaktnavn",
+          "mandatory": true,
+          "searchable": false,
+          "multi-value": false
+        },
+        {
+          "name": "contact_email",
+          "type": "EMAIL",
+          "description": "Epost",
+          "mandatory": true,
+          "searchable": false,
+          "multi-value": false
+        },
+        {
+          "name": "contact_mobile",
+          "type": "PHONE",
+          "description": "Mobil",
+          "mandatory": false,
+          "searchable": false,
+          "multi-value": false
+        },
+        {
+          "name": "contact_phone",
+          "type": "PHONE",
+          "description": "Telefon",
+          "mandatory": false,
+          "searchable": false,
+          "multi-value": false
+        }
+      ]
+    },
+    {
+      "name": "width",
+      "type": "NUMBER",
+      "description": "Bredde",
+      "mandatory": true,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "description",
+      "type": "STRING",
+      "description": "Beskrivelse",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "category",
+      "type": "ENUM",
+      "description": "Kategori",
+      "mandatory": true,
+      "searchable": false,
+      "multi-value": false,
+      "values": [
+        {
+          "code": "leiesut",
+          "label": "Båtplass leies ut"
+        },
+        {
+          "code": "selges",
+          "label": "Båtplass selges"
+        },
+        {
+          "code": "onskes",
+          "label": "Båtplass ønskes"
+        }
+      ]
+    },
+    {
+      "name": "situation",
+      "type": "STRING",
+      "description": "Beliggenhet",
+      "mandatory": true,
+      "searchable": false,
+      "multi-value": false
+    }
+  ],
+  "referenced-field-definitions": [],
+  "links": [],
+  "price-definitions": []
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="application/javascript" src="json-patch.min.js"></script>
+</head>
+<body>
+<script>
+    var myobj = { firstName:"Albert", contactDetails: { phoneNumbers: [ ] } };
+    var patches = [
+        {op:"replace", path:"/firstName", value:"Joachim" },
+        {op:"add", path:"/lastName", value:"Wester" },
+        {op:"add", path:"/contactDetails/phoneNumbers/0", value:{ number:"555-123" }  }
+    ];
+    jsonpatch.apply( myobj, patches );
+    alert(myobj);
+
+
+</script>
+</body>
+</html>

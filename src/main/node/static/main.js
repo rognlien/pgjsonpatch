@@ -17,7 +17,7 @@ $.fn.serializeObject = function() {
 };
 
 $(function() {
-    load(2);
+    load(1);
 
     $("form").on("submit", function( event ) {
         event.preventDefault();
