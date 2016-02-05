@@ -1,8 +1,8 @@
 
 INSERT INTO events (root, data) VALUES
   (1, '[
-    {"op": "add", "path": "/title", "value": "The original title"}
-    ,{"op": "add", "path": "/description", "value": "This is the original description"}
+    {"op": "add", "path": "/title", "value": "Record number one"}
+    ,{"op": "add", "path": "/description", "value": "This is the original description for record number two"}
     ]')
 
   ,(1, '[
@@ -11,7 +11,13 @@ INSERT INTO events (root, data) VALUES
     ]')
 
   ,(1, '[
-    {"op": "replace", "path": "/title", "value": "The updated title" }
+    {"op": "replace", "path": "/description", "value": "This is an updated description for record number two" }
+    ]')
+
+
+  ,(2, '[
+    {"op": "add", "path": "/title", "value": "Record number two"}
+    ,{"op": "add", "path": "/description", "value": "This is the original description for record number two"}
     ]')
   ;
 

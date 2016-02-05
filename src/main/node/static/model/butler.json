@@ -1,0 +1,34 @@
+{
+  "href": "http://benjohan.finn.no:8080/ads/model/butler",
+  "title": "butler",
+  "field-definitions": [
+
+    {
+      "name": "name",
+      "type": "STRING",
+      "description": "Navn",
+      "mandatory": true,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "age",
+      "type": "NUMBER",
+      "description": "Alder",
+      "mandatory": true,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "description",
+      "type": "STRING",
+      "description": "Beskrivelse",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    }
+  ],
+  "referenced-field-definitions": [],
+  "links": [],
+  "price-definitions": []
+}

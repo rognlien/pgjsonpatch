@@ -20,42 +20,85 @@
 
 </head>
 <body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Rubric</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="create"><a href="#"><span class="glyphicon glyphicon-plus"></span> New record</a></li>
+                <li id="logout"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+                <li id="loggedin"><a href="#"><span class="glyphicon glyphicon-user"></span><abbr></abbr></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <div class="container">
-    <form>
-        <input id="id" type="hidden" />
 
-        <div class="form-group">
-            <label for="title">Tittel</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="Tittel">
+    <div class="row">
+
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+
+            <form>
+                <input id="id" type="hidden"/>
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" name="description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text" class="form-control" id="price" name="price" placeholder="00"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactname">Name</label>
+                    <input type="text" class="form-control" id="contactname" name="contact.name"/>
+
+                    <label for="contactemail">Email</label>
+                    <input type="text" class="form-control" id="contactemail" name="contact.email"/>
+                </div>
+
+                <button type="submit" class="btn btn-default">Save</button>
+            </form>
+
+            <br/>
+            <div id="debug" class="alert alert-info" role="alert">
+                <pre></pre>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+
+            <table id="versiontable" class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Version</th>
+                    <th>Created</th>
+                    <th>By user</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
 
-        <div class="form-group">
-            <label for="description">Beskrivelse</label>
-            <textarea class="form-control" id="description" name="description"></textarea>
-        </div>
-
-        <div class="input-group">
-            <label for="price">Pris</label>
-            <input type="text" class="form-control" id="price" name="price" placeholder="00" />
-        </div>
-
-        <div class="input-group">
-            <button type="submit" class="btn btn-default">Lagre</button>
-        </div>
-    </form>
-
-    <table id="versiontable" class="table table-hover">
-        <thead>
-        <tr><th>Versjon</th><th>Sist endret</th><th></th></tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
-
-    <div id="debug"></div>
-
+    </div>
 </div>
-
 
 </body>
 </html>

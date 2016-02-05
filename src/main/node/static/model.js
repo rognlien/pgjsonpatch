@@ -17,12 +17,7 @@ $.fn.serializeObject = function() {
 };
 
 $(function() {
-    //load("boat-dock.json");
-    load("car-used.json");
-
-    //alert((123).toString(36) + " => " + parseInt("kf12oi", 36)); // "kf12oi"
-     // 12345
-
+    load(2, "model/butler.json");
 });
 
 
@@ -75,13 +70,54 @@ $(function() {
         return group;
     }
 
-    function load(file) {
+    function store(id, diff, callback) {
+        var url = "http://localhost:4730/ad/" + id;
+        $.ajax(url, {
+            data : JSON.stringify(diff)
+            ,contentType : 'application/json'
+            ,type : 'POST'
+            ,success: function (data) {
+                callback(data);
+            }
+        });
+    }
+
+    function load(id, file) {
         var url = "http://localhost:4730/" + file;
 
         $.getJSON(url,
             function(data) {
+
+                $form = $("form");
+                $("<input/>", {"type": "hidden", "name": "model", "value": data.title, "class": "form-control"}).appendTo($form);
+
                 $.each(data["field-definitions"], function( index, field ) {
-                    createField(field).appendTo("form");
+                    createField(field).appendTo($form);
+                });
+
+                $("<input/>", {"type": "submit", "value": "Lagre", "class": "form-control"}).appendTo($form);
+
+                $form.data("current", {});
+
+                $form.on("submit", function( event ) {
+                    event.preventDefault();
+                    //var id =  $("#id").val();
+                    var data = $form.serializeObject();
+                    var current = $form.data("current");
+
+                    console.dir(data, "data");
+                    console.dir(current, "current");
+
+                    var diff = jsonpatch.compare(current, data);
+
+                    store(2, diff, function(stored) {
+                        alert("Stored: " + stored);
+                    });
+
+                    console.log("Storing: %s", JSON.stringify(diff));
+
+                    $form.data("current", data);
+                    console.dir(current, "current");
                 });
             });
     }

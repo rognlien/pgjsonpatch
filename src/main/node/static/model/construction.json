@@ -1,0 +1,1141 @@
+{
+  "href": "http://ci.api.finn.no/adinput/ads/model/construction",
+  "title": "construction",
+  "field-definitions": [
+    {
+      "name": "chassis_variant",
+      "type": "ENUM",
+      "description": "Karosseritype",
+      "mandatory": true,
+      "searchable": false,
+      "multi-value": false,
+      "values": [
+        {
+          "code": "CHASSIS",
+          "label": "Fastspent ramme"
+        },
+        {
+          "code": "JOINTED",
+          "label": "Leddet"
+        },
+        {
+          "code": "OTHER",
+          "label": "Annet"
+        }
+      ]
+    },
+    {
+      "name": "statement_of_compliance",
+      "type": "BOOLEAN",
+      "description": "Samsvarserklæring",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "ce_marked",
+      "type": "BOOLEAN",
+      "description": "CE-merket",
+      "mandatory": true,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "boot_size",
+      "type": "STRING",
+      "description": "Lasterom",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "cab",
+      "type": "ENUM",
+      "description": "Førerhustype",
+      "mandatory": true,
+      "searchable": false,
+      "multi-value": false,
+      "values": [
+        {
+          "code": "CLOSED",
+          "label": "Lukket"
+        },
+        {
+          "code": "OPEN",
+          "label": "Åpent"
+        }
+      ]
+    },
+    {
+      "name": "year",
+      "type": "NUMBER",
+      "description": "Årsmodell",
+      "mandatory": true,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "chassis_number",
+      "type": "STRING",
+      "description": "Chassisnummer",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "weight",
+      "type": "NUMBER",
+      "description": "Bruttovekt",
+      "mandatory": true,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "workload",
+      "type": "NUMBER",
+      "description": "Arbeidsbelastning",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "description",
+      "type": "STRING",
+      "description": "Beskrivelse",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "lift_capacity",
+      "type": "NUMBER",
+      "description": "Løftekapasitet",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "max_speed",
+      "type": "NUMBER",
+      "description": "Topphastighet",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "chassis",
+      "type": "NUMBER",
+      "description": "Understell",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "auxiliary_hydraulics_performance",
+      "type": "NUMBER",
+      "description": "Ytelse hjelpehydraulikk",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "hours_used",
+      "type": "NUMBER",
+      "description": "Arb.timer",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "additional_hydraulics",
+      "type": "BOOLEAN",
+      "description": "Tilleggshydraulikk",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "transmission",
+      "type": "STRING",
+      "description": "Transmisjon",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "video_url",
+      "type": "URL",
+      "description": "Youtube eller vimeo url link",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false,
+      "schemes": [
+        "http",
+        "https"
+      ]
+    },
+    {
+      "name": "lift_height",
+      "type": "NUMBER",
+      "description": "Løftehøyde",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    },
+    {
+      "name": "engine",
+      "type": "COMPLEX",
+      "description": "motor",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false,
+      "children": [
+        {
+          "name": "effect",
+          "type": "NUMBER",
+          "description": "Effekt",
+          "mandatory": false,
+          "searchable": false,
+          "multi-value": false
+        },
+        {
+          "name": "volume",
+          "type": "STRING",
+          "description": "Motorvolum",
+          "mandatory": false,
+          "searchable": false,
+          "multi-value": false
+        }
+      ]
+    },
+    {
+      "name": "price",
+      "type": "COMPLEX",
+      "description": "pris",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false,
+      "children": [
+        {
+          "name": "total",
+          "type": "NUMBER",
+          "description": "Pris",
+          "mandatory": false,
+          "searchable": false,
+          "multi-value": false
+        },
+        {
+          "name": "vat_included",
+          "type": "BOOLEAN",
+          "description": "Inkludert MVA",
+          "mandatory": false,
+          "searchable": false,
+          "multi-value": false
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "type": "COMPLEX",
+      "description": "Kontaktinformasjon",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false,
+      "children": [
+        {
+          "name": "contact_name",
+          "type": "STRING",
+          "description": "Kontaktnavn",
+          "mandatory": true,
+          "searchable": false,
+          "multi-value": false
+        },
+        {
+          "name": "contact_email",
+          "type": "EMAIL",
+          "description": "Epost",
+          "mandatory": true,
+          "searchable": false,
+          "multi-value": false
+        },
+        {
+          "name": "contact_mobile",
+          "type": "PHONE",
+          "description": "Mobil",
+          "mandatory": false,
+          "searchable": false,
+          "multi-value": false
+        },
+        {
+          "name": "contact_phone",
+          "type": "PHONE",
+          "description": "Telefon",
+          "mandatory": false,
+          "searchable": false,
+          "multi-value": false
+        }
+      ]
+    },
+    {
+      "name": "construction_model",
+      "type": "COMPLEX",
+      "description": "Modell",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false,
+      "children": [
+        {
+          "name": "make",
+          "type": "ENUM",
+          "description": "Merke",
+          "mandatory": true,
+          "searchable": false,
+          "multi-value": false,
+          "values": [
+            {
+              "code": "abeco",
+              "label": "ABECO"
+            },
+            {
+              "code": "abs",
+              "label": "ABS"
+            },
+            {
+              "code": "aichi",
+              "label": "Aichi"
+            },
+            {
+              "code": "airman",
+              "label": "Airman"
+            },
+            {
+              "code": "ammann",
+              "label": "AMMANN"
+            },
+            {
+              "code": "ascendant",
+              "label": "Ascendant"
+            },
+            {
+              "code": "atlas",
+              "label": "Atlas"
+            },
+            {
+              "code": "atlas_copco",
+              "label": "Atlas Copco"
+            },
+            {
+              "code": "atlet",
+              "label": "Atlet"
+            },
+            {
+              "code": "attack",
+              "label": "Attack"
+            },
+            {
+              "code": "ausa",
+              "label": "Ausa"
+            },
+            {
+              "code": "avant",
+              "label": "Avant"
+            },
+            {
+              "code": "avelingbarford",
+              "label": "Aveling Barford"
+            },
+            {
+              "code": "basket",
+              "label": "Basket"
+            },
+            {
+              "code": "belarus",
+              "label": "Belarus"
+            },
+            {
+              "code": "bell",
+              "label": "Bell"
+            },
+            {
+              "code": "bergmann",
+              "label": "Bergmann"
+            },
+            {
+              "code": "bluelift",
+              "label": "Bluelift"
+            },
+            {
+              "code": "bobcat",
+              "label": "Bobcat"
+            },
+            {
+              "code": "bomag",
+              "label": "Bomag"
+            },
+            {
+              "code": "boss",
+              "label": "Boss"
+            },
+            {
+              "code": "BT",
+              "label": "BT"
+            },
+            {
+              "code": "case",
+              "label": "Case"
+            },
+            {
+              "code": "caseIH/case",
+              "label": "Case IH"
+            },
+            {
+              "code": "cat",
+              "label": "Cat"
+            },
+            {
+              "code": "cesab",
+              "label": "Cesab"
+            },
+            {
+              "code": "clark",
+              "label": "Clark"
+            },
+            {
+              "code": "CROWN",
+              "label": "Crown"
+            },
+            {
+              "code": "daemo",
+              "label": "Daemo"
+            },
+            {
+              "code": "daewoo",
+              "label": "Daewoo"
+            },
+            {
+              "code": "dantruck",
+              "label": "Dan Truck"
+            },
+            {
+              "code": "david brown",
+              "label": "David Brown"
+            },
+            {
+              "code": "demag",
+              "label": "Demag"
+            },
+            {
+              "code": "denka",
+              "label": "Denka"
+            },
+            {
+              "code": "deutz",
+              "label": "Deutz"
+            },
+            {
+              "code": "dieci",
+              "label": "Dieci"
+            },
+            {
+              "code": "dingli",
+              "label": "Dingli"
+            },
+            {
+              "code": "dino",
+              "label": "Dino"
+            },
+            {
+              "code": "ditch witch",
+              "label": "Ditch Witch"
+            },
+            {
+              "code": "doosan",
+              "label": "Doosan"
+            },
+            {
+              "code": "dynapac",
+              "label": "Dynapac"
+            },
+            {
+              "code": "falck schmidt",
+              "label": "Falck Schmidt"
+            },
+            {
+              "code": "faresin",
+              "label": "Faresin"
+            },
+            {
+              "code": "faun",
+              "label": "Faun"
+            },
+            {
+              "code": "fendt",
+              "label": "Fendt"
+            },
+            {
+              "code": "fiat",
+              "label": "Fiat"
+            },
+            {
+              "code": "fiat kobelco",
+              "label": "Fiat Kobelco"
+            },
+            {
+              "code": "fiatallis",
+              "label": "Fiat-Allis"
+            },
+            {
+              "code": "fiathitachi",
+              "label": "Fiat-Hitachi"
+            },
+            {
+              "code": "ford",
+              "label": "Ford"
+            },
+            {
+              "code": "france_elevateur",
+              "label": "France Elevateur"
+            },
+            {
+              "code": "gardner denver",
+              "label": "Gardner Denver"
+            },
+            {
+              "code": "gehl",
+              "label": "Gehl"
+            },
+            {
+              "code": "genie",
+              "label": "Genie"
+            },
+            {
+              "code": "giant",
+              "label": "Giant"
+            },
+            {
+              "code": "goransons",
+              "label": "Goransons"
+            },
+            {
+              "code": "grove",
+              "label": "Grove"
+            },
+            {
+              "code": "halla",
+              "label": "Halla"
+            },
+            {
+              "code": "hamm",
+              "label": "Hamm"
+            },
+            {
+              "code": "hanscha",
+              "label": "Hangcha"
+            },
+            {
+              "code": "hanix",
+              "label": "Hanix"
+            },
+            {
+              "code": "hanomag",
+              "label": "Hanomag"
+            },
+            {
+              "code": "haulotte",
+              "label": "Haulotte"
+            },
+            {
+              "code": "heli",
+              "label": "Heli"
+            },
+            {
+              "code": "hinowa",
+              "label": "Hinowa"
+            },
+            {
+              "code": "hitachi",
+              "label": "Hitachi"
+            },
+            {
+              "code": "hmf",
+              "label": "HMF"
+            },
+            {
+              "code": "hurliman",
+              "label": "Hurliman"
+            },
+            {
+              "code": "hydrema",
+              "label": "Hydrema"
+            },
+            {
+              "code": "hymax",
+              "label": "Hymax"
+            },
+            {
+              "code": "hyster",
+              "label": "Hyster"
+            },
+            {
+              "code": "hyundai",
+              "label": "Hyundai"
+            },
+            {
+              "code": "ihi",
+              "label": "IHI"
+            },
+            {
+              "code": "ingersoll",
+              "label": "Ingersoll"
+            },
+            {
+              "code": "iteco",
+              "label": "Iteco"
+            },
+            {
+              "code": "jcb",
+              "label": "JCB"
+            },
+            {
+              "code": "jenz",
+              "label": "JENZ"
+            },
+            {
+              "code": "jinma",
+              "label": "Jinma"
+            },
+            {
+              "code": "jlg",
+              "label": "JLG"
+            },
+            {
+              "code": "job-mann",
+              "label": "Job-Man"
+            },
+            {
+              "code": "john deere",
+              "label": "John Deere"
+            },
+            {
+              "code": "jungheinrich",
+              "label": "Jungheinrich"
+            },
+            {
+              "code": "kaeser",
+              "label": "Kaeser"
+            },
+            {
+              "code": "kalmar",
+              "label": "Kalmar"
+            },
+            {
+              "code": "karcher",
+              "label": "Kärcher"
+            },
+            {
+              "code": "kato",
+              "label": "Kato"
+            },
+            {
+              "code": "keestrack",
+              "label": "Keestrack"
+            },
+            {
+              "code": "kleemann",
+              "label": "Kleemann"
+            },
+            {
+              "code": "kobelco",
+              "label": "Kobelco"
+            },
+            {
+              "code": "kockum",
+              "label": "Kockum"
+            },
+            {
+              "code": "komatsu",
+              "label": "Komatsu"
+            },
+            {
+              "code": "komptech",
+              "label": "Komptech"
+            },
+            {
+              "code": "kramerallrad",
+              "label": "KramerAllrad"
+            },
+            {
+              "code": "kubota",
+              "label": "Kubota"
+            },
+            {
+              "code": "lamborghini",
+              "label": "Lamborghini"
+            },
+            {
+              "code": "libra",
+              "label": "Libra"
+            },
+            {
+              "code": "liebherr",
+              "label": "Liebherr"
+            },
+            {
+              "code": "liftstar",
+              "label": "Liftstar"
+            },
+            {
+              "code": "linde",
+              "label": "Linde"
+            },
+            {
+              "code": "liugong",
+              "label": "Liugong"
+            },
+            {
+              "code": "ljungby",
+              "label": "Ljungby"
+            },
+            {
+              "code": "logitrans",
+              "label": "Logitrans"
+            },
+            {
+              "code": "lundberg",
+              "label": "Lundberg"
+            },
+            {
+              "code": "magni",
+              "label": "Magni"
+            },
+            {
+              "code": "manitou",
+              "label": "Manitou"
+            },
+            {
+              "code": "massey ferguson",
+              "label": "Massey Ferguson"
+            },
+            {
+              "code": "matilsa",
+              "label": "Matilsa"
+            },
+            {
+              "code": "maximal",
+              "label": "Maximal"
+            },
+            {
+              "code": "mb track",
+              "label": "Mb Track"
+            },
+            {
+              "code": "mc cormick",
+              "label": "Mc Cormick"
+            },
+            {
+              "code": "mec",
+              "label": "MEC"
+            },
+            {
+              "code": "MERLO",
+              "label": "Merlo"
+            },
+            {
+              "code": "messersi",
+              "label": "Messersi"
+            },
+            {
+              "code": "michigan",
+              "label": "Michigan"
+            },
+            {
+              "code": "milano",
+              "label": "Milano"
+            },
+            {
+              "code": "mitsubishi",
+              "label": "Mitsubishi"
+            },
+            {
+              "code": "monark",
+              "label": "Monark"
+            },
+            {
+              "code": "morooka",
+              "label": "Morooka"
+            },
+            {
+              "code": "moxy",
+              "label": "Moxy"
+            },
+            {
+              "code": "mustang",
+              "label": "Mustang"
+            },
+            {
+              "code": "neuson",
+              "label": "Neuson"
+            },
+            {
+              "code": "new holand",
+              "label": "New Holland"
+            },
+            {
+              "code": "niftylift",
+              "label": "Niftylift"
+            },
+            {
+              "code": "nissan",
+              "label": "Nissan"
+            },
+            {
+              "code": "ok",
+              "label": "O&K"
+            },
+            {
+              "code": "oil & steel",
+              "label": "Oil & Steel"
+            },
+            {
+              "code": "omg",
+              "label": "OMG"
+            },
+            {
+              "code": "omme",
+              "label": "Omme"
+            },
+            {
+              "code": "paus",
+              "label": "Paus"
+            },
+            {
+              "code": "peljob",
+              "label": "PEL-JOB"
+            },
+            {
+              "code": "pesci",
+              "label": "Pesci"
+            },
+            {
+              "code": "ponsse",
+              "label": "Ponsse"
+            },
+            {
+              "code": "rammax",
+              "label": "Rammax"
+            },
+            {
+              "code": "renault",
+              "label": "Renault"
+            },
+            {
+              "code": "rocla",
+              "label": "Rocla"
+            },
+            {
+              "code": "rottne",
+              "label": "Rottne"
+            },
+            {
+              "code": "same",
+              "label": "Same"
+            },
+            {
+              "code": "samsung",
+              "label": "Samsung"
+            },
+            {
+              "code": "sandvik",
+              "label": "Sandvik"
+            },
+            {
+              "code": "sany",
+              "label": "Sany"
+            },
+            {
+              "code": "schaeff",
+              "label": "Schaeff"
+            },
+            {
+              "code": "shibaura",
+              "label": "Shibaura"
+            },
+            {
+              "code": "silverstone",
+              "label": "Silverstone"
+            },
+            {
+              "code": "silverstone",
+              "label": "Silverstone"
+            },
+            {
+              "code": "sky high",
+              "label": "Sky High"
+            },
+            {
+              "code": "skyjack",
+              "label": "SkyJack"
+            },
+            {
+              "code": "smv",
+              "label": "SMV"
+            },
+            {
+              "code": "snorkel",
+              "label": "Snorkel"
+            },
+            {
+              "code": "still",
+              "label": "Still"
+            },
+            {
+              "code": "stronga",
+              "label": "Stronga"
+            },
+            {
+              "code": "sumitomo",
+              "label": "Sumitomo"
+            },
+            {
+              "code": "sumo",
+              "label": "Sumo"
+            },
+            {
+              "code": "sunward",
+              "label": "Sunward"
+            },
+            {
+              "code": "tadano",
+              "label": "Tadano"
+            },
+            {
+              "code": "tadano-faun",
+              "label": "Tadano-Faun"
+            },
+            {
+              "code": "takeuchi",
+              "label": "Takeuchi"
+            },
+            {
+              "code": "tamrock",
+              "label": "Tamrock"
+            },
+            {
+              "code": "tapio",
+              "label": "Tapio"
+            },
+            {
+              "code": "terex",
+              "label": "Terex"
+            },
+            {
+              "code": "terex-demag",
+              "label": "Terex-Demag"
+            },
+            {
+              "code": "tesmec",
+              "label": "Tesmec"
+            },
+            {
+              "code": "thwaites",
+              "label": "Thwaites"
+            },
+            {
+              "code": "timberjack",
+              "label": "Timberjack"
+            },
+            {
+              "code": "toyota",
+              "label": "Toyota"
+            },
+            {
+              "code": "ultrascreen",
+              "label": "Ultrascreen"
+            },
+            {
+              "code": "unimog",
+              "label": "Unimog"
+            },
+            {
+              "code": "upright",
+              "label": "UpRight"
+            },
+            {
+              "code": "ursus",
+              "label": "Ursus"
+            },
+            {
+              "code": "valmet",
+              "label": "Valmet"
+            },
+            {
+              "code": "valtra",
+              "label": "Valtra"
+            },
+            {
+              "code": "venieri",
+              "label": "Venieri"
+            },
+            {
+              "code": "vermeer",
+              "label": "Vermeer"
+            },
+            {
+              "code": "versalift",
+              "label": "Versalift"
+            },
+            {
+              "code": "verticom",
+              "label": "Verticom"
+            },
+            {
+              "code": "volvo",
+              "label": "Volvo"
+            },
+            {
+              "code": "wacker",
+              "label": "Wacker"
+            },
+            {
+              "code": "WEIDEMANN",
+              "label": "Weidemann"
+            },
+            {
+              "code": "WILLE",
+              "label": "Wille"
+            },
+            {
+              "code": "wipco",
+              "label": "Wipco"
+            },
+            {
+              "code": "yanmar",
+              "label": "Yanmar"
+            },
+            {
+              "code": "yuchai",
+              "label": "Yuchai"
+            },
+            {
+              "code": "zetor",
+              "label": "Zetor"
+            },
+            {
+              "code": "zettelmeyer",
+              "label": "Zettelmeyer"
+            },
+            {
+              "code": "osa",
+              "label": "ØSA"
+            },
+            {
+              "code": "aakerman",
+              "label": "Åkerman"
+            },
+            {
+              "code": "OTHER",
+              "label": "Andre"
+            }
+          ]
+        },
+        {
+          "name": "model",
+          "type": "STRING",
+          "description": "Modellspesifikasjon",
+          "mandatory": false,
+          "searchable": false,
+          "multi-value": false
+        }
+      ]
+    },
+    {
+      "name": "agri_segment",
+      "type": "ENUM",
+      "description": "Kjøretøygruppe",
+      "mandatory": true,
+      "searchable": false,
+      "multi-value": false,
+      "values": [
+        {
+          "code": "drillingequipment",
+          "label": "Borutstyr"
+        },
+        {
+          "code": "agridumper",
+          "label": "Dumper"
+        },
+        {
+          "code": "mechanicaldigger",
+          "label": "Gravemaskin"
+        },
+        {
+          "code": "wheeledloader",
+          "label": "Hjullaster"
+        },
+        {
+          "code": "industrimaskin",
+          "label": "Industrimaskin"
+        },
+        {
+          "code": "crushingtelescopegear",
+          "label": "Knuse -og sikteutstyr"
+        },
+        {
+          "code": "SKID_STEER_LOADER",
+          "label": "Kompaktlaster"
+        },
+        {
+          "code": "COMPRIMATOR_MACHINE",
+          "label": "Komprimeringsmaskin"
+        },
+        {
+          "code": "agricranes",
+          "label": "Kraner"
+        },
+        {
+          "code": "LIFT",
+          "label": "Lift"
+        },
+        {
+          "code": "minidigger",
+          "label": "Minigraver"
+        },
+        {
+          "code": "toolcarrier",
+          "label": "Redskapsbærer"
+        },
+        {
+          "code": "TELESCOPIC_HANDLER",
+          "label": "Teleskoptruck"
+        },
+        {
+          "code": "agriaccessories",
+          "label": "Tilbehør"
+        },
+        {
+          "code": "BACKHOE_LOADER",
+          "label": "Traktorgraver"
+        },
+        {
+          "code": "truck",
+          "label": "Truck"
+        },
+        {
+          "code": "other",
+          "label": "Andre kjøretøygrupper"
+        }
+      ]
+    },
+    {
+      "name": "service_contract",
+      "type": "BOOLEAN",
+      "description": "Vedlikeholdsavtale",
+      "mandatory": false,
+      "searchable": false,
+      "multi-value": false
+    }
+  ],
+  "referenced-field-definitions": [],
+  "links": [],
+  "price-definitions": []
+}
